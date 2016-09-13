@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="urlDropdown">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<script src="app.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<style>
+			.urlbuilder{
+                    margin-top: 34px;
+                    background-color: rgba(192,192,192,0.2);
+                    border-radius: 9px;
+                    box-shadow: 0px 8px 10px gray, -10px 8px 15px gray, 10px 8px 15px gray;
+            }
+		</style>
+	</head>
+	<body>
+		<div ng-controller="dropdownController" class="container urlbuilder">
+			<form>
+				<fieldset>
+					<legend>Url Builder - AngularJs version</legend>
+					<div class="form-group">
+						<label for="url">Url<span style="color:red;">*</span></label>
+						<input type="text" class="form-control" ng-model="url.link" id="url">
+					</div>
+					<div class="form-group">
+						<label for="campaignName">Campaign Name<span style="color:red;">*</span></label>
+						<input type="text" class="form-control" id="campaignName" ng-model="url.campaignName" id="url">
+					</div>
+					<div class="form-group">
+						<label for="firstDrop">Campaign Medium<span style="color:red;">*</span></label>
+						<select name="firstDrop" class="form-control" id="firstDrop" ng-model="firstDropdownSelected" ng-options="first.id as first.name for first in firstDropdown" ng-change="onchange(firstDropdownSelected)">
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="secondDrop">Campaign Source<span style="color:red;">*</span></label>
+						<select name="secondDrop" class="form-control" id="secondDrop" ng-model="secondDropdownSelected"  ng-options="second.id as second.name for second in secondDropdown" ng-init="secondDropdownSelected = secondDropdownSelected || options[0].value">
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="campaignDate">Campaign Date<span style="color:#00acef;"> (Mandatory only when Campaign Medium is Email)</span></label>
+						<input type="text" class="form-control" id="campaignDate" ng-model="url.campaignDate">
+					</div>
+					<div class="form-group">
+						<label>Campaign Content<span style="color:red;">*</span></label>
+						<input type="text" class="form-control" id="campaignContent" ng-model="url.campaignContent">
+					</div>
+					<div class="form-group">
+        				<label for="state">State Targetting</label>
+        				<select id="state" ng-model="url.state" class="form-control">
+        					<option value="NSW">NSW</option>
+        					<option value="VIC">VIC</option>
+        					<option value="QLD">QLD</option>
+        					<option value="NT">NT</option>
+        					<option value="WA">WA</option>
+        					<option value="TAS">TAS</option>
+        				</select>
+    			    </div>
+				</fieldset>
+			</form>
+			<div>
+				{{firstDropdownSelected}}  {{secondDropdownSelected}}
+			</div>
+		</div>
+	</body>
+</html>
