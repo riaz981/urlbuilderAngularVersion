@@ -100,7 +100,7 @@ urlDropdown.controller('dropdownController', function dropdownController($scope)
 			$scope.secondDropdown="";
 		}
 
-		if($scope.firstDropdownSelected==="email"){
+		if(list==="email"){
 			$scope.secondDropdown=[
 				{
 					name:'lawyersweekly',
@@ -169,7 +169,7 @@ urlDropdown.controller('dropdownController', function dropdownController($scope)
 			];
 	}
 
-	else if($scope.firstDropdownSelected==="display"){
+	else if(list==="display"){
 		$scope.secondDropdown=[
 			{
 					name:'lawyersweekly',
@@ -238,15 +238,23 @@ urlDropdown.controller('dropdownController', function dropdownController($scope)
 			];
 	}
 
-		else if(list==="secondOption"){
+		else if(list==="social"){
 			$scope.secondDropdown=[
 				{
-					name:'third Option',
-					id: 'thirdOption'
+					name:'facebook',
+					id: 'facebook'
 				},
 				{
-					name:'fourth Option',
-					id:'fourthOption'
+					name:'twitter',
+					id:'twitter'
+				},
+				{
+					name:'linkedin',
+					id:'linkedin'
+				},
+				{
+					name:'plus.google.com',
+					id:'plus.good.com'
 				}
 			];
 		}
@@ -262,6 +270,9 @@ urlDropdown.controller('dropdownController', function dropdownController($scope)
 					id:'sixthOption'
 				}
 			];
+		}
+		else{
+			$scope.secondDropdown = "";
 		}
 	}
 });
