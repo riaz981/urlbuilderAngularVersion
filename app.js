@@ -4,35 +4,184 @@ urlDropdown.controller('dropdownController', function dropdownController($scope)
 	$scope.firstDropdownSelected={};
 	$scope.firstDropdown = [
 		{
-			name:'first Option',
-			id:'firstOption'
+			name:'Email',
+			id:'email'
 		},
 		{
-			name:'second Option',
-			id:'secondOption'
+			name:'Display',
+			id:'display'
+		},
+		{
+			name: 'Social',
+			id: 'social'	
+		},
+		{
+			name: 'ppc',
+			id: 'ppc'
 		}
 	];
 
 	$scope.firstDropdownSelected = $scope.firstDropdown[0].id;
 
-	if($scope.firstDropdownSelected==="firstOption"){
+	if($scope.firstDropdownSelected==="email"){
 			$scope.secondDropdown=[
 				{
-					name:'fifth Option',
-					id: 'fifthOption'
+					name:'lawyersweekly',
+					id: 'lawyersweekly'
 				},
 				{
-					name:'sixth Option',
-					id:'sixthOption'
+					name:'Accountants Daily',
+					id:'Accountants Daily'
+				},
+				{
+					name:'AI',
+					id:'AI'
+				},
+				{
+					name:'Fintech Business',
+					id:'Fintech Business'
+				},
+				{
+					name:'InvestorDaily',
+					id:'InvestorDaily'
+				},
+				{
+					name:'Risk Adviser',
+					id:'Risk Adviser'
+				},
+				{
+					name:'SPI',
+					id:'SPI'
+				},
+				{
+					name:'WIP',
+					id:'WIP'
+				},
+				{
+					name: 'IFA',
+					id: 'IFA'
+				},
+				{
+					name: 'MBUS',
+					id: 'MBUS'
+				},
+				{
+					name: 'NE',
+					id: 'NE'
+				},
+				{
+					name: 'Mortgage Business',
+					id: 'Mortgage Business'
+				},
+				{
+					name: 'Real Estate Business',
+					id: 'Real Estate Business'
+				},
+				{
+					name: 'Residential Property Manager',
+					id: 'Residential Property Manager'
+				},
+				{
+					name: 'SMSFAdviser',
+					id: 'SMSFAdviser'
+				},
+				{
+					name: 'The Adviser',
+					id: 'The Adviser'
 				}
 			];
 	}
+
+	
 
 	$scope.onchange = function(list){
 		console.log(list);
 		if(list==="null"){
 			$scope.secondDropdown="";
 		}
+
+		if($scope.firstDropdownSelected==="email"){
+			$scope.secondDropdown=[
+				{
+					name:'lawyersweekly',
+					id: 'lawyersweekly'
+				},
+				{
+					name:'Accountants Daily',
+					id:'Accountants Daily'
+				},
+				{
+					name:'AI',
+					id:'AI'
+				},
+				{
+					name:'Fintech Business',
+					id:'Fintech Business'
+				},
+				{
+					name:'InvestorDaily',
+					id:'InvestorDaily'
+				},
+				{
+					name:'Risk Adviser',
+					id:'Risk Adviser'
+				},
+				{
+					name:'SPI',
+					id:'SPI'
+				},
+				{
+					name:'WIP',
+					id:'WIP'
+				},
+				{
+					name: 'IFA',
+					id: 'IFA'
+				},
+				{
+					name: 'MBUS',
+					id: 'MBUS'
+				},
+				{
+					name: 'NE',
+					id: 'NE'
+				},
+				{
+					name: 'Mortgage Business',
+					id: 'Mortgage Business'
+				},
+				{
+					name: 'Real Estate Business',
+					id: 'Real Estate Business'
+				},
+				{
+					name: 'Residential Property Manager',
+					id: 'Residential Property Manager'
+				},
+				{
+					name: 'SMSFAdviser',
+					id: 'SMSFAdviser'
+				},
+				{
+					name: 'The Adviser',
+					id: 'The Adviser'
+				}
+			];
+	}
+
+	else if($scope.firstDropdownSelected==="display"){
+		$scope.secondDropdown=[
+			{
+				name: 'display Riaz',
+				id: 'riaz'
+			},
+			{
+				name: 'display Jason',
+				id: "jason"
+			}
+		];
+	}
+
 		else if(list==="secondOption"){
 			$scope.secondDropdown=[
 				{
