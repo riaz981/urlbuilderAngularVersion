@@ -167,6 +167,7 @@ urlDropdown.controller('dropdownController', function dropdownController($scope)
 					id: 'The Adviser'
 				}
 			];
+			$scope.secondDropdownSelected = $scope.secondDropdown[0].id;
 	}
 
 	else if(list==="display"){
@@ -259,15 +260,23 @@ urlDropdown.controller('dropdownController', function dropdownController($scope)
 			];
 		}
 
-		else if(list==="firstOption"){
+		else if(list==="ppc"){
 			$scope.secondDropdown=[
 				{
-					name:'fifth Option',
-					id: 'fifthOption'
+					name:'linkedin',
+					id: 'linkedin'
 				},
 				{
-					name:'sixth Option',
-					id:'sixthOption'
+					name:'facebook',
+					id:'facebook'
+				},
+				{
+					name: 'twitter',
+					id: 'twitter'
+				},
+				{
+					name: 'google+',
+					id: 'google+'
 				}
 			];
 		}
